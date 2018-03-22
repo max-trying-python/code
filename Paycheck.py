@@ -4,8 +4,8 @@ hours = int(input("How many hours did you work this week?\n"))
 rawRate = input("How much money, in dollars, are you paid?\n").replace("$", "")
 rate = int(rawRate)
 
-rawTax = input("How much is tax in percent? (20%)\n")
-tax = int(rawTax)
+rawTax = input("How much is tax in percent?\n")
+tax = int(rawTax) / 100
 
 # calculate gross tax
 gross = hours * rate
