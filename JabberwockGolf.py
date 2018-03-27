@@ -24,4 +24,4 @@ All mimsy were the borogoves,
 |And the mome raths outgrabe.""".replace("_","""
 
 
-""").replace("|","      ").replace("%","Jabberwock"))
+""").replace("|"," "*5).replace("%","Jabberwock"))
