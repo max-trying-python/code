@@ -7,6 +7,8 @@ overtime_multiplier = 1.5
 money_per_hour = 10
 # the most hours you can work WITHOUT GOING INTO OVERTIME
 min_overtime_hours = 40
+# tax multiplier
+tax = 0.2
 
 hours_worked = None
 pay = None
@@ -26,4 +28,7 @@ else:
     pay = money_per_hour * 40 * overtime_multiplier
     pay += money_per_hour * (hours_worked - 40)
 
-print("You earned ${}".format(pay))
+# subtract tax
+pay -= (pay * tax)
+
+print("You earned ${}, after tax".format(pay))
