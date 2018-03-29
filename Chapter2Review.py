@@ -1,3 +1,6 @@
+# chapter 2 review assignment
+
+
 # book price
 cover_price = 24.95
 discount = 0.4
@@ -16,5 +19,6 @@ seconds = round(leave_time % 60)
 minutes = round((leave_time - seconds) / 60 % 60)
 hours = round(((leave_time) / 60 - minutes) / 60)
 seconds = str(seconds).zfill(1)
+# .format is great
 str_to_return = "You will arrive at {}:{}:{}".format(hours, minutes, seconds)
 print(str_to_return)
