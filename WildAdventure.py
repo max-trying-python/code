@@ -16,6 +16,9 @@ def lockComputer():
     os.system("rundll32.exe user32.dll,LockWorkStation")
 
 
+print(chr(27) + "[2J")
+
+
 def main():
     print("""
  _______  ______            _______  _       _________          _______  _______   _________ _______    _______          _________  _________          _______  _______  _______
@@ -66,7 +69,19 @@ Bash: remove every file, directory, simlink, etc that can be removed by root. As
 ▀                                 ▀                                                                                                                                    ███    ███
  """)
         lockComputer()
-        print("I guess you know the password. You are a hacker.")
+        print(chr(27) + "[2J")
+        print("I guess you know the password. You are a")
+        print("""
+    ▄█    █▄       ▄████████  ▄████████    ▄█   ▄█▄    ▄████████    ▄████████
+  ███    ███     ███    ███ ███    ███   ███ ▄███▀   ███    ███   ███    ███
+  ███    ███     ███    ███ ███    █▀    ███▐██▀     ███    █▀    ███    ███
+  ▄███▄▄▄▄███▄▄   ███    ███ ███         ▄█████▀     ▄███▄▄▄      ▄███▄▄▄▄██▀
+▀▀███▀▀▀▀███▀  ▀███████████ ███        ▀▀█████▄    ▀▀███▀▀▀     ▀▀███▀▀▀▀▀
+  ███    ███     ███    ███ ███    █▄    ███▐██▄     ███    █▄  ▀███████████
+   ███    ███     ███    ███ ███    ███   ███ ▀███▄   ███    ███   ███    ███
+  ███    █▀      ███    █▀  ████████▀    ███   ▀█▀   ██████████   ███    ███
+                                         ▀                        ███    ███
+                                         """)
     elif rmRf == "":
         print("You are too lazy. Prepare for HIBERNATION!")
         time.sleep(1.5)
