@@ -3,6 +3,18 @@ import getpass
 import os
 import sys
 
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+
 time.sleep(1)
 
 hasResized = False
@@ -15,12 +27,13 @@ def lockComputer():
     time.sleep(0.75)
     os.system("rundll32.exe user32.dll,LockWorkStation")
 
+
 def clearScreen():
-    print(chr(27) + "[2J")
+    os.system("cls")
 
 
 def main():
-    print("""
+    print(bcolors.HEADER + """
  _______  ______            _______  _       _________          _______  _______     _________ _______    _______          _________  _________          _______  _______  _______
 (  ___  )(  __  \ |\     /|(  ____ \( (    /|\__   __/|\     /|(  ____ )(  ____ \    \__   __/(  ____ \    (  ___  )|\     /|\__   __/  \__   __/|\     /|(  ____ \(  ____ )(  ____ \\
 | (   ) || (  \  )| )   ( || (    \/|  \  ( |   ) (   | )   ( || (    )|| (    \/       ) (   | (    \/    | (   ) || )   ( |   ) (        ) (   | )   ( || (    \/| (    )|| (    \/
@@ -29,7 +42,7 @@ def main():
 | (   ) || |   ) | \ \_/ / | (      | | \   |   | |   | |   | || (\ (   | (             | |         ) |    | |   | || |   | |   | |        | |   | (   ) || (      | (\ (   | (
 | )   ( || (__/  )  \   /  | (____/\| )  \  |   | |   | (___) || ) \ \__| (____/\    ___) (___/\____) |    | (___) || (___) |   | |        | |   | )   ( || (____/\| ) \ \__| (____/\\
 |/     \|(______/    \_/   (_______/|/    )_)   )_(   (_______)|/   \__/(_______/    \_______/\_______)    (_______)(_______)   )_(        )_(   |/     \|(_______/|/   \__/(_______/
-
+""" + bcolors.ENDC + """
 
 Press F11 & unplug your mouse for best gameplay
 Press enter to continue
@@ -43,6 +56,7 @@ Your name sounds like a nerd. Good. This is a code-golf adventure. Have fun.
 """.format(user))
 
     time.sleep(0.5)
+    clearScreen()
 
     print("""Challenge number 1
 Bash: remove every file, directory, simlink, etc that can be removed by root. Assume that your code is being run by a non-root user that is in the sudoers file.
