@@ -4,6 +4,7 @@ import os
 import sys
 
 
+# a class that lets me use TERMINAL COLORS!
 class bcolors:
     PURPLE = '\033[95m'
     OKBLUE = '\033[94m'
@@ -15,6 +16,7 @@ class bcolors:
     RESET = '\033[0m'
 
 
+# pretend we are a good program by waiting before we do anything
 time.sleep(1)
 
 hasResized = False
@@ -25,6 +27,7 @@ user = getpass.getuser()
 
 def lockComputer():
     time.sleep(0.75)
+    # windows-only lock computer (keeps programs open but requires password)
     os.system("rundll32.exe user32.dll,LockWorkStation")
 
 
@@ -33,6 +36,7 @@ def clearScreen():
 
 
 def main():
+    # title
     print(bcolors.PURPLE + """
  _______  ______            _______  _       _________          _______  _______     _________ _______      _______          _________  _________          _______  _______  _______
 (  ___  )(  __  \ |\     /|(  ____ \( (    /|\__   __/|\     /|(  ____ )(  ____ \    \__   __/(  ____ \    (  ___  )|\     /|\__   __/  \__   __/|\     /|(  ____ \(  ____ )(  ____ \\
@@ -55,7 +59,8 @@ Hello, {}!
 Your name sounds like a nerd. Good. This is a code-golf adventure. Have fun.
 """.format(user))
 
-    time.sleep(1.5)
+    # let them read, than clear the screen
+    time.sleep(4)
     clearScreen()
 
     print("""Challenge number 1
@@ -66,7 +71,9 @@ Bash: remove every file, directory, simlink, etc that can be removed by root. As
 
     if rmRf == "sudo rm -rf --no-preserve-root /":
         print("Nice, but not very golfed. You have tried. But you did not succeede. Prepare for shutdown.")
+        # shutdown in 15 seconds
         os.system("shutdown /s /t 15")
+        # cancel
         time.sleep(2.5)
         print("Just kidding. I trolled you.")
         os.system("shutdown /a")
@@ -101,6 +108,7 @@ Bash: remove every file, directory, simlink, etc that can be removed by root. As
     elif rmRf == "":
         print("You are too lazy. Prepare for {}HIBERNATION!{}".format(bcolors.FAIL, bcolors.RESET))
         time.sleep(1.5)
+        # hibernate computer (windows / dos only)
         os.system("shutdown /h /f")
         time.sleep(1)
         sys.exit()
