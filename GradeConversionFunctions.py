@@ -4,11 +4,13 @@
 while True:
     try:
         # input the grade that the poor student who is under the torture that is the 1-4 system has recieved
-        grade = float(input("Please enter a grade from 1.0 - 4.0\n"))
-        if input > 4 or input < 1:
+        grade = float(input("\nPlease enter a grade from 1.0 - 4.0\n> "))
+        if grade > 4 or grade < 1:
+            print("Invalid grade.")
             continue
-    # catch errors
+    # catch errors and tell the user they are bad.
     except Exception as e:
+        print("Invalid grade.")
         # no student is an exception to the 1-4 system
         continue
     # if we're lucky, everything went well
