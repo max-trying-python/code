@@ -44,9 +44,9 @@ for x in range(0, len(grades)):
         peopleAndGrades.append([grades[x], getGrade(grades[x+1])])
 
 
-print("Name\t\t\t|Grade")
+print("Name\t\t\t| Grade")
 
 # enumerate and print
 for list in peopleAndGrades:
     # divide the length of the string by 8, then round down, then subtract 3 - that number, to get the number of tabs to add.
-    print(list[0] + "\t" * (3 - math.floor(len(list[0]) / 8)) + "|" + list[1])
+    print(list[0] + "\t" * (3 - math.floor(len(list[0]) / 8)) + "| " + list[1])
