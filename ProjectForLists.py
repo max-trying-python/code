@@ -34,11 +34,11 @@ def alphabeticalNames():
 def tellLikes():
     for person in peopleList:
         if person[4] == "hiking":
-            #like hiking?
+            # like hiking?
             print("i like hiking too")
 
         if person[4] == "tofu":
-            #like tofu?
+            # like tofu?
             print("bacon is better")
 
 
