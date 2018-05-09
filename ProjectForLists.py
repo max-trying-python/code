@@ -25,7 +25,6 @@ def alphabeticalNames():
 
     # sort the list by the first element (index 0), the last name
     sortedList = sorted(peopleList, key=firstElem)
-    print(sortedList)
     for person in sortedList:
         # print the name
         print("{} {}".format(person[FIRST], person[LAST]))
@@ -33,16 +32,16 @@ def alphabeticalNames():
 
 def tellLikes():
     for person in peopleList:
-        if person[4] == "hiking":
+        if person[4] == "Hiking":
             # like hiking?
-            print("i like hiking too")
-
-        if person[4] == "tofu":
+            print("{}, i like hiking too".format(person[1] + " " + person[0]))
+        if person[5] == "Tofu":
             # like tofu?
-            print("bacon is better")
+            print("{}, bacon is better".format(person[1] + " " + person[0]))
 
 
 wishMerryFestivus()
 print("\n")
 alphabeticalNames()
 print("\n")
+tellLikes()
